@@ -19,6 +19,11 @@ class GOTTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        gotImageView.layer.shadowColor = UIColor.cyan.cgColor
+        gotImageView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        gotImageView.layer.shadowOpacity = 2
+        gotImageView.layer.shadowRadius = 2.0
+        gotImageView.clipsToBounds = false
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

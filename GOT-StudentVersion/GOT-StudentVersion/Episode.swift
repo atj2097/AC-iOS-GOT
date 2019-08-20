@@ -16,16 +16,19 @@ class Episode: UIViewController {
     @IBOutlet weak var seasonEpisodeNumber: UILabel!
     @IBOutlet weak var episodeRuntime: UILabel!
     @IBOutlet weak var airDate: UILabel!
-    @IBOutlet weak var showDescription: UILabel!
+    @IBOutlet weak var showDescription: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         episodeImage.image = UIImage(named: gotEpisode.originalImageID)
         episodeTitle.text = "\(gotEpisode.name)"
-        seasonNumber.text = "\(gotEpisode.season)"
-        seasonEpisodeNumber.text = "\(gotEpisode.number)"
-        episodeRuntime.text = "\(gotEpisode.runtime)"
-        airDate.text = "\(gotEpisode.airdate)"
+        episodeTitle.font = UIFont.boldSystemFont(ofSize: 20.0)
+        seasonNumber.text = "Season: \(gotEpisode.season)"
+        seasonEpisodeNumber.text = "Episode: \(gotEpisode.number)"
+        episodeRuntime.text = "Time: \(gotEpisode.runtime)"
+        airDate.text = "Air Date: \(gotEpisode.airdate)"
+        showDescription.font = UIFont.italicSystemFont(ofSize: 20.0)
         showDescription.text = "\(gotEpisode.summary)"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
